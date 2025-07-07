@@ -1,0 +1,383 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+# Variables & Constants
+
+## Variables
+
+-   Variables are used to store value (data) in R.
+-   In variable, we can change value as per our need.
+-   Example:
+
+```{r}
+a <- 4 
+```
+
+## Constants
+
+-   Constants are those whose valye cannot be changed.
+-   Example:
+
+```{r}
+2.5 # numerical constant
+"hello" # character constant
+```
+
+## Assignment
+
+-   We use "\<-" (arrow) symbol to assign a value
+-   A variable can hold different types of data.
+
+```{r}
+num <- 123 # numeric
+alp <- "abc" # character
+
+# display 
+num 
+alp 
+```
+
+## Your Turn 01
+
+-   Assign 100 to **num1** variable and display it.
+
+-   Assign "apple" to **alpha1** variable and display it.
+
+```{r}
+
+
+
+
+```
+
+## Data Types
+
+### About
+
+-   Help us know what type of data a variable is holding.
+
+-   We can use **class()** function to determine data type of variable
+
+### Types
+
+| Data Types | Values                        |
+|------------|-------------------------------|
+| Logical    | TRUE / FALSE                  |
+| Numeric    | 123 (Integer) , 2.55 (Double) |
+| Character  | "a" , "abc"                   |
+| Date       | "2025-07-08"                  |
+
+### Check
+
+```{r}
+num <- 100
+char <- "Apple"
+logic <- TRUE
+date <- Sys.Date()
+```
+
+```{r}
+class(num)
+class(char)
+class(logic)
+class(date)
+```
+
+### Conversion
+
+| Function          | Description          |
+|-------------------|----------------------|
+| `as.character(x)` | Convert to character |
+| `as.numeric(x)`   | Convert to numeric   |
+| `as.logical(x)`   | Convert to logical   |
+
+### Example
+
+```{r}
+x <- 1.1
+y <- as.character(x)
+z <- as.numeric(y)
+a <- as.logical(z)
+```
+
+```{r}
+class(x)
+class(y)
+class(z)
+class(a)
+```
+
+## Your Turn 2
+
+### Question
+
+-   Find the class of the variable, `num1` and `alpha1` (variables from **Your Turn 1**).
+-   Convert `num1` to character type and assign it to variable called `char1`. And find class its too.
+
+### Answer
+
+```{r}
+# datatype of num1 and alpha1
+class(num1)
+
+class(alpha1)
+
+char1 <- as.character(num1)
+
+class(char1)
+```
+
+## Operators
+
+### About
+
+We have 3 basic operators in R.
+
+-   Arithmetic Operators
+-   Relational Operators
+-   Logical Operators
+
+### Arithmetic
+
+| Operator    | Description    |
+|-------------|----------------|
+| `+`         | Addition       |
+| `-`         | Subtraction    |
+| `*`         | Multiplication |
+| `/`         | Division       |
+| `^` or `**` | Exponentiation |
+
+### Example
+
+```{r}
+a <- 10
+b <- 3
+a + b
+a - b
+a * b
+a / b
+a ^ b
+```
+
+### Logical
+
+| Operator | Description |
+|----------|-------------|
+| `&`      | AND         |
+| `|`      | OR          |
+| `!`      | NOT         |
+
+### Example
+
+```{r}
+TRUE & FALSE
+TRUE | FALSE
+!TRUE
+```
+
+### Relational
+
+| Operator | Description              |
+|----------|--------------------------|
+| `==`     | Equal to                 |
+| `!=`     | Not equal to             |
+| `<`      | Less than                |
+| `>`      | Greater than             |
+| `<=`     | Less than or equal to    |
+| `>=`     | Greater than or equal to |
+
+### Example
+
+```{r}
+5 == 5
+"cat" != "dog"
+5 < 4
+7 > 2
+4 <= 4
+3 >= 5
+```
+
+## Decision Making
+
+Decision making is achieved using the conditional if...else statement.
+
+### if statement
+
+``` r
+if (test_expression) {
+statement
+}
+```
+
+### Example
+
+```{r}
+signal <- 1
+if(x > 0){
+"Positive number"
+}
+```
+
+## if else statement
+
+### Syntax
+
+``` r
+if (test_expression) {
+statement1
+} else {
+statement2
+}
+```
+
+### Example
+
+```{r}
+x <- -1
+if(x > 0){
+"Positive number"
+} else {
+"Negative number"
+}
+```
+
+## if else Ladder
+
+### Syntax
+
+``` r
+if ( test_expression1) {
+statement1
+} else if ( test_expression2) {
+statement2
+} else if ( test_expression3) {
+statement3
+} else {
+statement4
+}
+```
+
+### Example
+
+```{r}
+x <- 0
+if (x < 0) {
+"Negative number"
+} else if (x > 0) {
+"Positive number"
+} else{
+  "Zero"
+}
+
+```
+
+## Your Turn 03
+
+### Question
+
+Create an age group classiciation.
+
+-   Assign random age like 25.
+
+-   Then, complete the if-else ladder to match this classification:
+
+-   Child: \<13
+
+-   Teen: 13-19
+
+-   Adult: 20-64
+
+-   Elderly: 65+
+
+### Answer
+
+```{r}
+age <- ...
+
+if(age < ...) {
+  "Child"
+} else if(age < ...) {
+  "Teen"
+} else if(...) {
+  "Adult"
+} else {
+  "..."
+}
+```
+
+## Switch
+
+Switch is an expression against elements of a list.
+
+### Syntax
+
+``` r
+switch (expression, list)
+```
+
+### Numeric
+
+-   Switch as numerical expression
+
+```{r}
+
+visit_code <- 2  # Try changing to 1, 2, or 3
+
+switch(visit_code,
+        "Screening", # First Element
+        "Treatment", # Second Element
+        "Follow-up") # Third Element
+```
+
+### String
+
+-   Switch as string expression
+
+```{r}
+
+order <- "biryani"  # Try "dosa", "paneer", or "vada"
+
+# Menu with prices
+switch(order,
+       "biryani" = 220,
+        "dosa" = 90,
+        "paneer" = 180, 
+        "vada" = 40,
+        "samosa" = 25,
+        "Item not available")
+```
+
+## Your Turn 05
+
+### Question
+
+Create a simple vital sign unit finder.
+
+-   Assign `vital_sign` as "BP".
+
+-   Then, complete the switch case to match this:
+
+-   "BP" = "mmHg",
+
+-   "HR" = "bpm",
+
+-   "TEMP" = "C",
+
+-   "RR" = "breaths/min",
+
+### Answer
+
+```{r}
+vital_sign <- ...
+
+switch(vital_sign,
+       ...,
+       ...,
+       ...,
+       ...
+      )
+
+```
