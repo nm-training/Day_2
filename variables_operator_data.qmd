@@ -42,7 +42,7 @@ alp
 
 ## Your Turn 01
 
--   Assign 100 to **num1** variable and display it.
+-   Assign `100` to **num1** variable and display it.
 
 -   Assign "apple" to **alpha1** variable and display it.
 
@@ -315,7 +315,7 @@ Switch is an expression against elements of a list.
 ### Syntax
 
 ``` r
-switch (expression, list)
+switch(expression, list)
 ```
 
 ### Numeric
