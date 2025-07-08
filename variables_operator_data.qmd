@@ -40,6 +40,55 @@ num
 alp 
 ```
 
+## Naming Convention
+
+### Rules
+
+-   Variable name must start with alphabet (or dot).
+-   Only accepts letters, numbers, dot and underscore
+-   Case is sensitive (n vs N)
+-   Can't use Reserved words
+
+### Example 1
+
+**Incorrect**
+
+```{r}
+_my_data <- 500
+1_my_data <- 345
+```
+
+**Correct**
+
+```{r}
+my_data <- 200
+my_1data <- 400
+.my_data <- 600
+```
+
+### Example 2
+
+**Case is different**
+
+```{r}
+n <- 5
+N <- 10
+
+n
+N
+```
+
+### Example 3
+
+Reserved words can't be used as a variable.
+
+```{r}
+if <- 100
+
+else <- 200
+
+```
+
 ## Your Turn 01
 
 -   Assign `100` to **num1** variable and display it.
@@ -323,7 +372,6 @@ switch(expression, list)
 -   Switch as numerical expression
 
 ```{r}
-
 visit_code <- 2  # Try changing to 1, 2, or 3
 
 switch(visit_code,
